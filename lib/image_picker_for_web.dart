@@ -236,7 +236,7 @@ class ImagePickerPlugin extends ImagePickerPlatform {
     ) as html.FileUploadInputElement;
     _injectAndActivate(input);
 
-    return _getSelectedXFiles(input);
+    return _getSelectedXFiles(input).whenComplete(input.remove);;
   }
 
   // DOM methods
